@@ -18,13 +18,13 @@
         <button type="button" onclick="showSection('booking')">Bus Booking</button>
 
         <div class="logout-btn-wrapper">
-            <button type="button" id="logout" onclick="window.location.href='index.php'">Logout</button>
+            <button type="button" id="logout" onclick="window.location.href='../admin/index.html'">Logout</button>
         </div>
     </div>
 
     <!-- Main Content -->
     <div class="main">
-        <!-- Manage RECORDS SECTIONNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN__------------------------------------- -->
+        <!-- Manage RECORDS SECTION------------------------------------------------------->
         <div id="records" class="section">
             <h3>Bus Records</h3>
             <button type="button" id="addbusBtn" onclick="openModal()">+ Add Bus</button>
@@ -33,26 +33,27 @@
             </div>
 
             <!-- Bus Info Modal if pic is cliked -->
-            <div id="busInfoModal">
-                <div id="innerbusInfoModal">
-                    <span id="xbutt" onclick="closeBusInfo()">×</span>
-                    <h3 id="busInfoTitle">Bus Info</h3>
-                    <hr id="hr">
-                    <p><strong>Route:</strong> <span id="busRoute"></span></p>
-                    <p><strong>Travel Time:</strong> <span id="busTravelTime"></span></p>
-                    <p><strong>Total Fare:</strong> ₱<span id="busTotalFare"></span></p>
-                    <p><strong>Plate No.:</strong> <span id="busPlateNo"></span></p>
-                    <p><strong>Driver:</strong> <span id="busDriver"></span></p>
-                    <p><strong>Driver Contact:</strong> <span id="busDriverContact"></span></p>
-                    <p><strong>Conductor:</strong> <span id="busConductor"></span></p>
-                    <p><strong>Conductor Contact:</strong> <span id="busConductorContact"></span></p>
-                    <div class="button-container">
-                        <button type="button" id="btnInfMod" class="button">Edit</button>
+                <div id="busInfoModal">
+                    <div id="innerbusInfoModal">
+                        <span id="xbutt" onclick="closeBusInfo()">×</span>
+                        <h3 id="busInfoTitle">Bus Info</h3>
+                        <hr id="hr">
+                        <p><strong>Route:</strong> <span id="busRoute"></span></p>
+                        <p><strong>Travel Time:</strong> <span id="busTravelTime"></span></p>
+                        <p><strong>Total Fare:</strong> ₱<span id="busTotalFare"></span></p>
+                        <p><strong>Plate No.:</strong> <span id="busPlateNo"></span></p>
+                        <p><strong>Available Seats:</strong> <span id="availableSeats"></span></p>
+                        <p><strong>Driver:</strong> <span id="busDriver"></span></p>
+                        <p><strong>Driver Contact:</strong> <span id="busDriverContact"></span></p>
+                        <p><strong>Conductor:</strong> <span id="busConductor"></span></p>
+                        <p><strong>Conductor Contact:</strong> <span id="busConductorContact"></span></p>
+                        <div class="button-container">
+                            <button type="button" id="btnInfMod" class="button">Edit</button>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- ADD BUS BUTTON IN BUS RECORDS MODALLLLLLLLLL -------------------------------------------->
+            <!-- ADD BUS BUTTON IN BUS RECORDS MODAL ----------------------------------------------------->
             <div id="busModal">
                 <div id="modalbusbutton">
                   <span onclick="closeModal()" id="closeModal">x</span>
@@ -127,41 +128,10 @@
             </div>
         </div>
 
-        <!-- PANGALAWANG SECTIONNNNNNNNNNNNNNNNNNNNNNNN ------------------- BUS BOOKING SECTION ------------------------------------------------>
+        <!-- PANGALAWANG SECTION-------------------- BUS BOOKING SECTION ------------------------------------------------>
         <div id="booking" class="section hidden">
             <h3>Bus Booking</h3>
             <button type="button" onclick="openBookingModal()">+ Add Booking</button>
-            <!-- ACEEPTED BOOKINGS SECTION ------------------------------------------------>
-            <h3>Accepted Bookings</h3>
-            <div id="outerAccepted">
-                <table id="tblAccepted">
-                    <thead id="theadAccepted">
-                        <tr>
-                            <th>Reference No.</th>
-                            <th>Passenger Name</th>
-                            <th>Contact</th>
-                            <th>Bus Name</th>
-                            <th>Bus Number</th>
-                            <th>Route</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <!-- laman ng table accepted -->
-                        <tr>
-                            <td>ZXC9823</td>
-                            <td>Juan Dela Cruz</td>
-                            <td>09123456789</td>
-                            <td>Baliwag</td>
-                            <td>1014</td>
-                            <td>Manila - Cabanatuan</td>
-                            <td>
-                                <button class="button" onclick="showDetailsModal()">Details</button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
 
             <!-- Add Booking BUTTON MODAL POP UP -->
             <div id="bookingModal">
@@ -181,21 +151,23 @@
                                 <tr>
                                     <th>Bus No.</th>
                                     <th>Bus Name</th>
+                                    <th>Route</th>
                                     <th>Travel Time</th>
                                     <th>Driver</th>
                                     <th>Conductor</th>
                                     <th>Seats Left</th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody id="busTableBody">
                                 <!-- Data sa table ng add booking -->
                                 <tr>
-                                    <td>7820</td>
-                                    <td>Baliwag</td>
-                                    <td>1:00 PM</td>
-                                    <td>Juan Dela Cruz</td>
-                                    <td>Pedro Santos</td>
-                                    <td>45</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -228,11 +200,32 @@
                 </div>
             </div>
 
-            <!-- PENDING BOOKINGS SECTION ------------------------------------------------>
-            <h3>Pending Bookings</h3>
+            <!-- ACCEPTED BOOKINGS SECTION ------------------------------------------------>
+            <h3>Accepted Bookings</h3>
             <div id="outerAccepted">
                 <table id="tblAccepted">
                     <thead id="theadAccepted">
+                        <tr>
+                            <th>Reference No.</th>
+                            <th>Passenger Name</th> 
+                            <th>Contact</th>
+                            <th>Bus Name</th>
+                            <th>Bus Number</th>
+                            <th>Route</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Dynamic data sa table ng accepted bookings (js) -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- PENDING BOOKINGS SECTION ------------------------------------------------>
+            <h3>Pending Bookings</h3>
+            <div id="outerPending">
+                <table id="tblPending">
+                    <thead id="theadPending">
                         <tr>
                             <th>Reference No.</th>
                             <th>Date and Time</th>
@@ -245,20 +238,9 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <!-- laman ng table pending booking -->
+                        <!-- Dynamic data sa table ng pending bookings (js) -->
                         <tr>
-                            <td>ZXC9823</td>
-                            <td>2025-04-09 10:00 PM</td>
-                            <td>Juan Dela Cruz</td>
-                            <td>09123456789</td>
-                            <td>Baliwag</td>
-                            <td>1014</td>
-                            <td>Manila - Cabanatuan</td>
-                            <td>
-                                <button type="button" id="pendDet" class="button" onclick="showDetailsModal()">Details</button>
-                                <button type="button" id="accDet" class="button">Accept</button>
-                                <button type="button" id="rejDet" class="button">Reject</button>
-                            </td>
+
                         </tr>
                     </tbody>
                 </table>
@@ -288,6 +270,8 @@
                 </div>
             </div>
         </div>
+</body>
+
 
         <script>
             /* PARA SA SIDEBAR */
@@ -306,9 +290,30 @@
             }
 
             /* modals mga pop up window yan */
-            function showDetailsModal() {
-                document.getElementById('detailsModal').style.display = 'flex';
+            function showDetailsModal(referenceNo) {
+                const booking = allBookings.find(b => b.referenceNo === referenceNo);
+                if (!booking) {
+                    alert('Booking not found.');
+                    return;
+                }
+            
+                // Fill modal content
+                const modal = document.getElementById('detailsModal');
+                modal.querySelector('p:nth-child(3)').innerHTML = `<strong>Reference No.:</strong> ${booking.referenceNo}`;
+                modal.querySelector('p:nth-child(4)').innerHTML = `<strong>Booking Date and Time:</strong> ${booking.dateTime}`;
+                modal.querySelector('p:nth-child(5)').innerHTML = `<strong>Passenger Name:</strong> ${booking.firstName} ${booking.lastName}`;
+                modal.querySelector('p:nth-child(6)').innerHTML = `<strong>Route:</strong> ${booking.route}`;
+                modal.querySelector('p:nth-child(7)').innerHTML = `<strong>Travel Time:</strong> ${booking.travelTime || 'N/A'}`;
+                modal.querySelector('p:nth-child(8)').innerHTML = `<strong>Bus Name:</strong> ${booking.busName}`;
+                modal.querySelector('p:nth-child(9)').innerHTML = `<strong>Bus No.:</strong> ${booking.busNumber}`;
+                modal.querySelector('p:nth-child(10)').innerHTML = `<strong>Driver:</strong> ${booking.driver || 'N/A'}`;
+                modal.querySelector('p:nth-child(11)').innerHTML = `<strong>Conductor:</strong> ${booking.conductor || 'N/A'}`;
+                modal.querySelector('p:nth-child(12)').innerHTML = `<strong>Mode of Payment:</strong> ${booking.modeOfPayment}`;
+                modal.querySelector('p:nth-child(13)').innerHTML = `<strong>Total Fare:</strong> ₱${booking.totalFare}`;
+            
+                modal.style.display = 'flex';
             }
+            
 
             function closeDetailsModal() {
                 document.getElementById('detailsModal').style.display = 'none';
@@ -335,7 +340,7 @@
             function previewQR(event) {
                 const output = document.getElementById('previewQRImage');
                 output.src = URL.createObjectURL(event.target.files[0]);
-              }              
+            }              
 
             /* Function to open the modal add booking button cliked */
             function openBookingModal() {
@@ -346,14 +351,10 @@
                 document.getElementById('bookingModal').style.display = 'none';
             }
 
-
-
-
             //db php para ma save sa database
             document.getElementById("confbutt").addEventListener("click", function () {
                 const formData = new FormData();
             
-                // Append basic form values
                 formData.append("busNumber", document.getElementById("busNo").value);
                 formData.append("plateNumber", document.getElementById("plateNo").value);
                 formData.append("route", document.getElementById("route").value);
@@ -365,7 +366,6 @@
                 formData.append("conductorName", document.getElementById("conductorName").value);
                 formData.append("conductorContact", document.getElementById("conductorContact").value);
             
-                // Append files
                 const busImageFile = document.getElementById("busImageInput").files[0];
                 const qrImageFile = document.getElementById("gcashQRInput").files[0];
                 if (busImageFile) formData.append("busImage", busImageFile);
@@ -380,8 +380,7 @@
                 .then(data => {
                     if (data.success) {
                         alert("✅ Bus information saved successfully!");
-                        closeModal(); // Optional: if you want to hide the modal
-                        // Optionally reset form here too
+                        closeModal(); // Close the modal after saving
                     } else {
                         alert("❌ Failed to save bus information. Please try again.");
                     }
@@ -390,6 +389,7 @@
                     console.error("Error:", error);
                     alert("⚠️ An error occurred. Please check the console.");
                 });
+                location.reload();
             });
 
             // SA BUS RECORDS ITO Function to show the bus info modal when a bus image is clicked para lumabas info
@@ -429,10 +429,11 @@
                 document.querySelector("#busInfoModal p:nth-of-type(2)").innerHTML = `<strong>Travel Time:</strong> ${bus.travelTime}`;
                 document.querySelector("#busInfoModal p:nth-of-type(3)").innerHTML = `<strong>Total Fare:</strong> ₱${bus.totalFare}`;
                 document.querySelector("#busInfoModal p:nth-of-type(4)").innerHTML = `<strong>Plate No.:</strong> ${bus.plateNumber}`;
-                document.querySelector("#busInfoModal p:nth-of-type(5)").innerHTML = `<strong>Driver:</strong> ${bus.driver.name}`;
-                document.querySelector("#busInfoModal p:nth-of-type(6)").innerHTML = `<strong>Driver Contact:</strong> ${bus.driver.contact}`;
-                document.querySelector("#busInfoModal p:nth-of-type(7)").innerHTML = `<strong>Conductor:</strong> ${bus.conductor.name}`;
-                document.querySelector("#busInfoModal p:nth-of-type(8)").innerHTML = `<strong>Conductor Contact:</strong> ${bus.conductor.contact}`;
+                document.querySelector("#busInfoModal p:nth-of-type(5)").innerHTML = `<strong>Available Seats:</strong> ${bus.availableSeats}`;
+                document.querySelector("#busInfoModal p:nth-of-type(6)").innerHTML = `<strong>Driver:</strong> ${bus.driver.name}`;
+                document.querySelector("#busInfoModal p:nth-of-type(7)").innerHTML = `<strong>Driver Contact:</strong> ${bus.driver.contact}`;
+                document.querySelector("#busInfoModal p:nth-of-type(8)").innerHTML = `<strong>Conductor:</strong> ${bus.conductor.name}`;
+                document.querySelector("#busInfoModal p:nth-of-type(9)").innerHTML = `<strong>Conductor Contact:</strong> ${bus.conductor.contact}`;
 
                 document.getElementById("busInfoModal").style.display = "flex";
             }
@@ -441,7 +442,220 @@
             function closeBusInfo() {
                 document.getElementById("busInfoModal").style.display = "none";
             }
+
+            let selectedBus = null;
+            let selectedRow = null;
+
+            // for add booking
+            document.addEventListener('DOMContentLoaded', function () {
+                const searchField = document.getElementById('searchField');
+                const tbody = document.querySelector('#addbooktbll tbody');
+            
+                function loadBuses(filter = '') {
+                    fetch('../php/getBuses.php')
+                        .then(response => response.json())
+                        .then(data => {
+                            const tbody = document.getElementById('busTableBody');
+                            tbody.innerHTML = '';
+
+                            if (data.success) {
+                                data.buses.forEach(bus => {
+                                    const route = bus.route || '';
+                                    if (route.toLowerCase().includes(filter.toLowerCase())) {
+                                        const row = document.createElement('tr');
+
+                                        row.innerHTML = `
+                                            <td>${bus.busNumber || ''}</td>
+                                            <td>${bus.busName || ''}</td>
+                                            <td>${bus.route || ''}</td>
+                                            <td>${bus.travelTime || ''}</td>
+                                            <td>${bus.driver.name || ''}</td>
+                                            <td>${bus.conductor.name || ''}</td>
+                                            <td>${bus.availableSeats || ''}</td>
+                                        `;
+
+                                        row.addEventListener('click', () => {
+                                            selectedBus = bus;
+
+                                            // Remove previous selection
+                                            if (selectedRow) {
+                                                selectedRow.classList.remove('selected-row');
+                                            }
+
+                                            // Highlight new row
+                                            row.classList.add('selected-row');
+                                            selectedRow = row;
+                                        });
+
+                                        tbody.appendChild(row);
+                                    }
+                                });
+                            
+                            } else {
+                                tbody.innerHTML = '<tr><td colspan="7">No buses found.</td></tr>';
+                            }
+                        })
+                        .catch(err => {
+                            console.error('Error loading buses:', err);
+                            tbody.innerHTML = '<tr><td colspan="7">Error loading data.</td></tr>';
+                        });
+                }
+            
+                // Initial load
+                loadBuses();
+            
+                // Filter on typing
+                searchField.addEventListener('input', () => {
+                    loadBuses(searchField.value);
+                });
+            
+                // Optional: Reload when modal opens (if you're hiding/showing it)
+                document.getElementById('spanBookModal').addEventListener('click', () => {
+                    loadBuses();
+                });
+
+            });
+
+            // Book button functionality
+            document.addEventListener('DOMContentLoaded', () => {
+                document.getElementById('bookbtn')?.addEventListener('click', function () {
+                    // Check if bus is selected
+                    if (!selectedBus) {
+                        alert('Please select a bus first.');
+                        return;
+                    }
+            
+                    // Get passenger details
+                    const firstName = document.getElementById('firstName').value.trim();
+                    const lastName = document.getElementById('lastName').value.trim();
+                    const contact = document.getElementById('contact').value.trim();
+                    const modeOfPayment = document.getElementById('modeOfPayment')?.value.trim() || 'Cash';
+            
+                    // Validate passenger details
+                    if (!firstName || !lastName || !contact) {
+                        alert('Please fill in all passenger details.');
+                        return;
+                    }
+            
+                    // Create FormData
+                    const formData = new FormData();
+                    formData.append('busNumber', selectedBus.busNumber);
+                    formData.append('firstName', firstName);
+                    formData.append('lastName', lastName);
+                    formData.append('contact', contact);
+                    formData.append('modeOfPayment', modeOfPayment);
+                    formData.append('totalFare', selectedBus.totalFare); // Assuming selectedBus.fare holds the fare
+                    formData.append('availableSeats', selectedBus.availableSeats); // Assuming this too
+            
+                    // Send request to the backend
+                    fetch('../php/addBooking.php', {
+                        method: 'POST',
+                        body: formData
+                    })
+                    .then(res => res.json())
+                    .then(response => {
+                        if (response.success) {
+                            // Success flow
+                            alert('Booking successful!');
+                            try {
+                                closeBookingModal(); // Close the modal if defined
+                                loadBuses(); // Reload or refresh bus list if defined
+                                loadBookings(); // Refresh the bookings table
+                            } catch (e) {
+                                console.error('Error closing modal or reloading buses:', e);
+                            }
+                            return; // Prevent further processing
+                        } else {
+                            // Failure flow
+                            alert('Booking failed: ' + response.message);
+                        }
+                    })
+                    .catch(err => {
+                        // Handle network or other errors
+                        console.error('Booking error:', err);
+                        alert('An error occurred while booking.');
+                    });
+                });
+            });
+            
+            //Para lumabas sa table yung accpeted and pending bookings
+            document.addEventListener('DOMContentLoaded', function () {
+                function loadBookings() {
+                    fetch('../php/getBookings.php')
+                        .then(res => res.json())
+                        .then(response => {
+                            if (!response.success) {
+                                alert('Failed to load bookings: ' + response.message);
+                                return;
+                            }
+            
+                            // Store globally
+                            window.allBookings = response.data;
+            
+                            const bookings = response.data;
+                            const pendingBody = document.querySelector('#tblPending tbody');
+                            const acceptedBody = document.querySelector('#tblAccepted tbody');
+            
+                            pendingBody.innerHTML = '';
+                            acceptedBody.innerHTML = '';
+            
+                            bookings.forEach(booking => {
+                                const row = document.createElement('tr');
+                                row.innerHTML = `
+                                    <td>${booking.referenceNo}</td>
+                                    ${booking.status === 'pending' ? `<td>${booking.dateTime}</td>` : ''}
+                                    <td>${booking.firstName} ${booking.lastName}</td>
+                                    <td>${booking.contact}</td>
+                                    <td>${booking.busName}</td>
+                                    <td>${booking.busNumber}</td>
+                                    <td>${booking.route}</td>
+                                    <td>
+                                        <button class="button" id="pendDet" onclick="showDetailsModal('${booking.referenceNo}')">Details</button>
+                                        ${booking.status === 'pending' ? `
+                                            <button class="button" id="accDet" onclick="updateStatus('${booking.referenceNo}', 'accepted')">Accept</button>
+                                            <button class="button" id="rejDet" onclick="updateStatus('${booking.referenceNo}', 'rejected')">Reject</button>
+                                        ` : ''}
+                                    </td>
+                                `;
+                                if (booking.status === 'pending') {
+                                    pendingBody.appendChild(row);
+                                } else if (booking.status === 'accepted') {
+                                    acceptedBody.appendChild(row);
+                                }
+                            });
+                        })
+                        .catch(err => console.error('Error loading bookings:', err));
+                }
+            
+                loadBookings();
+            });
+                   
+            
+            //update status:accept and pending in booking
+            function updateStatus(referenceNo, newStatus) {
+                const formData = new FormData();
+                formData.append('referenceNo', referenceNo);
+                formData.append('newStatus', newStatus);
+            
+                fetch('../php/updateBookingStatus.php', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(res => res.json())
+                .then(response => {
+                    if (response.success) {
+                        alert('Status updated to ' + newStatus);
+                        loadBookings(); // Refresh the table
+                    } else {
+                        alert('Failed to update status: ' + response.message);
+                    }
+                })
+                .catch(err => {
+                    console.error('Status update error:', err);
+                    alert('An error occurred while updating status.');
+                });
+            }
+            
         </script>
-</body>
 
 </html>

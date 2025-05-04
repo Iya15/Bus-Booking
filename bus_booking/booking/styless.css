@@ -84,7 +84,7 @@ input[type="text"] {
     padding: 10px;
     width: 250px;
     margin: 10px 0;
-    border: 1px solid #ddd;
+    border: 1px solid #000000;
     border-radius: 5px;
     font-size: large;
 }
@@ -153,7 +153,7 @@ input[type="text"] {
 #lalagyanBtn, #lalagyanBtnSelectBus, #lalagyanBtnPassengerInfo, #lalagyanBtnPayment, #lalagyanBtnReceipt{
     text-align: right; margin-top: 20px;
 }
-#pinakaBtn, #pinakaBtnSelectBus, #pinakaBtnPassengerInfo, #pinakaBtnPayment, #pinakaBtnPrint, #pinakaBtnReceipt{
+#pinakaBtn, #pinakaBtnSelectBus, #pinakaBtnPassengerInfo, #pinakaBtnPayment, #submitBookingBtn, #pinakaBtnPrint, #pinakaBtnReceipt{
     padding: 10px 30px; background-color: #2d6a32; color: white; border: none; border-radius: 4px; font-weight: bold; font-size: 17px;
 }
 
@@ -169,7 +169,7 @@ input[type="text"] {
 #gcashFields{
     margin-top: 20px; display: none;
 }
-#gcashlbl{
+#gcashlblName, #gcashlblNumber{
     display: block; margin-top: 10px;
 }
 #gcashName{
@@ -212,3 +212,47 @@ input[type="text"] {
 #routebus{
     margin-bottom: 5px
 }
+
+#busDiv {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    height: 300px; /* adjust to your desired height */
+    overflow-y: auto;
+    background-color: #f9f9f9;
+    box-sizing: border-box;
+}
+
+#busPic {
+    width: 180px; /* adjust width to fit your layout */
+    padding: 8px;
+    border-radius: 6px;
+    box-shadow: 1px 1px 4px rgba(0,0,0,0.1);
+    text-align: center;
+    background-color: #fff;
+    box-sizing: border-box;
+}
+
+#busImg {
+    width: 100%;
+    height: auto;
+    margin-top: 6px;
+    border-radius: 4px;
+}
+
+#busPic.full-height {
+    height: 200px; /* take full height of the container */
+    width: 180px; /* adjust width to fit your layout */
+    padding: 10px;
+    padding-bottom: 8px;
+    border-radius: 6px;
+    box-shadow: 1px 1px 4px rgba(0,0,0,0.1);
+    text-align: center;
+    background-color: #fff;
+    box-sizing: border-box;
+}
+
+#busPic.selected {
+    background-color: #cce5ff; /* Light blue */
+  }
+  

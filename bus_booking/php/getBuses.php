@@ -14,7 +14,7 @@ if (isset($_GET['busId'])) {
         $bus = $db->getBusesCollection()->findOne(['_id' => new ObjectId($_GET['busId'])]);
 
         if ($bus) {
-            $bus['_id'] = (string) $bus['_id']; // Convert to string
+            $bus['_id'] = (string) $bus['_id'];
             echo json_encode(['success' => true, 'bus' => $bus]);
         } else {
             echo json_encode(['success' => false, 'message' => 'Bus not found']);

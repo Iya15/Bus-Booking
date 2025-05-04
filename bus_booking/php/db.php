@@ -10,26 +10,33 @@ class Database
 
     public function __construct()
     {
-        // Connect to MongoDB (modify this if using auth/remote server)
+        // connection to MongoDB
         $this->client = new Client("mongodb://localhost:27017");
-        $this->db = $this->client->bus_booking_system; // Change if using a different DB name
+        $this->db = $this->client->bus_booking_system; // db name
     }
 
-    // Collection accessors
+    // Collections [buses, bookings, passengers]
+    // ---------------- COLLECTIONS ----------------
     public function getBusesCollection()
     {
-        return $this->db->buses;
+        return $this->db->buses; // buses collection
     }
 
     public function getBookingsCollection()
     {
-        return $this->db->bookings;
+        return $this->db->bookings; // bookings collection
     }
 
     public function getPassengersCollection()
     {
-        return $this->db->passengers;
+        return $this->db->passengers; // passengers collection
     }
+
+    public function getAdminsCollection()
+    {
+        return $this->db->admin; // admin collection 
+    }
+
 
     // ---------------- BUS FUNCTIONS ----------------
 
@@ -101,5 +108,10 @@ class Database
     public function getAllPassengers()
     {
         return $this->getPassengersCollection()->find()->toArray();
+    }
+
+    public function getCollection($collectionName)
+    {
+        return $this->db->selectCollection($collectionName);
     }
 }

@@ -28,6 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'route' => $_POST['route'],
         'totalFare' => (float) $_POST['totalFare'],
         'travelTime' => $_POST['travelTime'],
+        'availableSeats' => 49, // <- Default seats
         'driver' => [
             'name' => $_POST['driverName'],
             'contact' => $_POST['driverContact']
